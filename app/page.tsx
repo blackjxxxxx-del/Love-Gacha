@@ -109,27 +109,6 @@ export default function Home() {
           ))}
         </motion.div>
 
-        {/* ── Rarity rates ── */}
-        <motion.div
-          className="flex gap-2 flex-wrap justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-        >
-          {[
-            { label: "Common",     rate: "60%", bg: "rgba(180,200,220,0.4)", color: "#3A2870" },
-            { label: "Rare",       rate: "25%", bg: "rgba(150,200,255,0.4)", color: "#1A5A9E" },
-            { label: "Super Rare", rate: "12%", bg: "rgba(220,170,255,0.4)", color: "#6A2A9E" },
-            { label: "Legendary",  rate: "3%",  bg: "rgba(255,220,80,0.35)", color: "#8B6000" },
-          ].map((r) => (
-            <div key={r.label}
-              className="px-3 py-1 rounded-full text-xs font-bold border"
-              style={{ background: r.bg, color: r.color, borderColor: "rgba(255,255,255,0.7)" }}>
-              {r.label} <span className="opacity-60 font-normal">{r.rate}</span>
-            </div>
-          ))}
-        </motion.div>
-
         {/* ── Nav ── */}
         <motion.nav
           className="flex gap-3 mt-auto pt-4"

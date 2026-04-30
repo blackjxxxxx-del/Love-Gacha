@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm show *)",
+      "Bash(npm run *)",
+      "Bash(echo \"PID: $!\")",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(file \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/Im/\"*.png \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/Im/\"*.jpg)",
+      "Bash(cp \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/Im/\"* \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/public/Im/\")",
+      "Bash(cp \"/Users/blackjay/Downloads/IMTYC-Birthday/IMTYC Birthday.ttf\" \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/public/fonts/IMTYC-Birthday.ttf\")",
+      "Bash(cp \"/Users/blackjay/Downloads/IMTYC-Birthday/IMTYC BirthdayBold.ttf\" \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/public/fonts/IMTYC-BirthdayBold.ttf\")",
+      "Bash(cp \"/Users/blackjay/Downloads/IMTYC-Birthday/IMTYC BirthdayThin.ttf\" \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/public/fonts/IMTYC-BirthdayThin.ttf\")",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(rm -rf \"/Users/blackjay/Documents/MacBook Pro Jay/Gacha Love/.next\")",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

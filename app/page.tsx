@@ -54,18 +54,18 @@ export default function Home() {
     <>
       <ResultModal item={result} onClose={() => setResult(null)} isNew={isNew} />
 
-      <div className="min-h-screen flex flex-col items-center px-4 py-8 gap-6">
+      <div className="h-screen flex flex-col items-center justify-between px-4 py-4">
 
-        {/* ── Header pill + title (birthday card style) ── */}
+        {/* ── Title ── */}
         <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: -30 }}
+          className="text-center pt-1"
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <h1
-            className="text-5xl font-bold"
-            style={{ fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif", lineHeight: 0.95 }}
+            className="font-bold"
+            style={{ fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif", lineHeight: 1, fontSize: "clamp(1.8rem, 9vw, 3rem)" }}
           >
             <span className="title-love">Love Gacha For </span>
             <br />
@@ -83,14 +83,13 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 180, damping: 16 }}
-          className="py-2"
         >
           <GachaBall onOpen={handlePull} canPull={canPull} isAnimating={isAnimating} />
         </motion.div>
 
         {/* ── Stats ── */}
         <motion.div
-          className="flex gap-3 text-center"
+          className="flex gap-2 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -100,8 +99,8 @@ export default function Home() {
             { label: "สะสม", value: `${state.collectedIds.length}/${totalItems}`,    color: "#2D1B5E" },
             { label: "SSR",  value: ssrCount,                                         color: "#B8860B" },
           ].map((s) => (
-            <div key={s.label} className="card-glass px-3 py-1.5 rounded-xl w-[72px] text-center">
-              <p className="text-lg font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
+            <div key={s.label} className="card-glass px-3 py-1 rounded-xl w-[68px] text-center">
+              <p className="text-base font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
                 {s.value}
               </p>
               <p className="text-xs" style={{ color: "#7B6A9E" }}>{s.label}</p>
@@ -111,7 +110,7 @@ export default function Home() {
 
         {/* ── Nav ── */}
         <motion.nav
-          className="flex gap-3 mt-auto pt-4"
+          className="flex gap-3 pb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7 }}

@@ -48,7 +48,7 @@ export function pullGacha(
 }
 
 export function getTodayString(): string {
-  return new Date().toISOString().split("T")[0];
+  return new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Bangkok" });
 }
 
 export function canPullToday(lastPullDate: string | null): boolean {

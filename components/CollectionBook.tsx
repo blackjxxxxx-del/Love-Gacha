@@ -28,7 +28,7 @@ export default function CollectionBook({ allItems, collectedIds }: CollectionBoo
   const got   = collectedIds.length;
 
   return (
-    <div className="w-full max-w-2xl mx-auto pb-10">
+    <div className="w-full max-w-2xl mx-auto pb-6">
       {/* Progress */}
       <div className="flex justify-between items-center mb-2">
         <span className="text-sm font-medium" style={{ color: "#7B6A9E" }}>สะสมได้</span>
@@ -36,7 +36,7 @@ export default function CollectionBook({ allItems, collectedIds }: CollectionBoo
           {got} / {total}
         </span>
       </div>
-      <div className="h-2.5 w-full rounded-full mb-8 overflow-hidden" style={{ background: "rgba(180,200,240,0.35)" }}>
+      <div className="h-2.5 w-full rounded-full mb-4 overflow-hidden" style={{ background: "rgba(180,200,240,0.35)" }}>
         <motion.div
           className="h-full rounded-full"
           style={{ background: "linear-gradient(90deg,#FF6B9D,#C84BFF)" }}
@@ -51,8 +51,8 @@ export default function CollectionBook({ allItems, collectedIds }: CollectionBoo
         const s = RARITY_STYLE[rarity];
         const gotCount = items.filter((i) => collected.has(i.id)).length;
         return (
-          <div key={rarity} className="mb-8">
-            <div className="flex items-center gap-2 mb-3">
+          <div key={rarity} className="mb-4">
+            <div className="flex items-center gap-2 mb-2">
               <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold ${s.badge}`}>{s.label}</span>
               <span className="text-xs" style={{ color: "#9B8ABE" }}>{gotCount} / {items.length}</span>
             </div>

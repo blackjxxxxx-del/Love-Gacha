@@ -19,9 +19,9 @@ export default function CollectionPage() {
   if (!state) return null;
 
   return (
-    <div className="min-h-screen px-4 py-8">
+    <div className="min-h-screen px-4 py-4">
       <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="max-w-2xl mx-auto">
-        <div className="flex items-center gap-4 mb-8">
+        <div className="flex items-center gap-3 mb-4">
           <Link href="/"
             className="px-4 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105"
             style={{ background: "rgba(255,255,255,0.6)", border: "1.5px solid rgba(255,255,255,0.9)", color: "#2D1B5E" }}>

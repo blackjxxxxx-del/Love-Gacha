@@ -56,21 +56,30 @@ export default function Home() {
 
       <div className="h-[100svh] flex flex-col items-center px-4 overflow-hidden">
 
-        {/* ── Title + Pity ── */}
+        {/* ── Title ── */}
         <motion.div
-          className="text-center w-full max-w-[300px] mt-6"
+          className="text-center mt-5"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <h1
-            className="font-bold mb-2"
+            className="font-bold"
             style={{ fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif", lineHeight: 1.05, fontSize: "clamp(1.7rem, 8.5vw, 2.8rem)" }}
           >
             <span className="title-love">Love Gacha For</span>
             <br />
             <span className="title-name">คูมมอมอ</span>
           </h1>
+        </motion.div>
+
+        {/* ── Pity ── */}
+        <motion.div
+          className="w-full max-w-[280px] mt-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
           <PityBar pityCount={state.pityCount} />
         </motion.div>
 
@@ -84,28 +93,34 @@ export default function Home() {
           <GachaBall onOpen={handlePull} canPull={canPull} isAnimating={isAnimating} />
         </motion.div>
 
-        {/* ── Stats + Nav ── */}
+        {/* ── Stats ── */}
         <motion.div
-          className="flex flex-col items-center gap-4 mb-6"
-          initial={{ opacity: 0, y: 16 }}
+          className="flex gap-3 mt-2"
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="flex gap-3">
-            {[
-              { label: "หมุน", value: state.totalPulls,                             color: "#2D1B5E" },
-              { label: "สะสม", value: `${state.collectedIds.length}/${totalItems}`, color: "#2D1B5E" },
-              { label: "SSR",  value: ssrCount,                                      color: "#B8860B" },
-            ].map((s) => (
-              <div key={s.label} className="card-glass px-5 py-2.5 rounded-2xl text-center min-w-[76px]">
-                <p className="text-xl font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
-                  {s.value}
-                </p>
-                <p className="text-xs mt-0.5" style={{ color: "#7B6A9E" }}>{s.label}</p>
-              </div>
-            ))}
-          </div>
+          {[
+            { label: "หมุน", value: state.totalPulls,                             color: "#2D1B5E" },
+            { label: "สะสม", value: `${state.collectedIds.length}/${totalItems}`, color: "#2D1B5E" },
+            { label: "SSR",  value: ssrCount,                                      color: "#B8860B" },
+          ].map((s) => (
+            <div key={s.label} className="card-glass px-5 py-2.5 rounded-2xl text-center min-w-[76px]">
+              <p className="text-xl font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
+                {s.value}
+              </p>
+              <p className="text-xs mt-0.5" style={{ color: "#7B6A9E" }}>{s.label}</p>
+            </div>
+          ))}
+        </motion.div>
 
+        {/* ── Nav ── */}
+        <motion.div
+          className="mt-3 mb-5"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+        >
           <Link
             href="/collection"
             className="flex items-center gap-1.5 px-5 py-2 rounded-full font-semibold text-sm transition-all hover:scale-105"

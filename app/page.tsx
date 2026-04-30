@@ -54,7 +54,7 @@ export default function Home() {
     <>
       <ResultModal item={result} onClose={() => setResult(null)} isNew={isNew} />
 
-      <div className="h-[100dvh] flex flex-col items-center px-4">
+      <div className="h-[100svh] flex flex-col items-center px-4 overflow-hidden">
 
         {/* ── Title + Pity ── */}
         <motion.div
@@ -86,22 +86,22 @@ export default function Home() {
 
         {/* ── Stats + Nav ── */}
         <motion.div
-          className="flex flex-col items-center gap-2.5 mb-5"
+          className="flex flex-col items-center gap-4 mb-6"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             {[
               { label: "หมุน", value: state.totalPulls,                             color: "#2D1B5E" },
               { label: "สะสม", value: `${state.collectedIds.length}/${totalItems}`, color: "#2D1B5E" },
               { label: "SSR",  value: ssrCount,                                      color: "#B8860B" },
             ].map((s) => (
-              <div key={s.label} className="card-glass px-4 py-1.5 rounded-2xl text-center min-w-[64px]">
-                <p className="text-base font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
+              <div key={s.label} className="card-glass px-5 py-2.5 rounded-2xl text-center min-w-[76px]">
+                <p className="text-xl font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
                   {s.value}
                 </p>
-                <p className="text-[11px]" style={{ color: "#7B6A9E" }}>{s.label}</p>
+                <p className="text-xs mt-0.5" style={{ color: "#7B6A9E" }}>{s.label}</p>
               </div>
             ))}
           </div>

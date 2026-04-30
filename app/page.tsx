@@ -54,32 +54,29 @@ export default function Home() {
     <>
       <ResultModal item={result} onClose={() => setResult(null)} isNew={isNew} />
 
-      <div className="h-screen flex flex-col items-center justify-between px-4 py-4">
+      <div className="h-[100dvh] flex flex-col items-center px-4">
 
-        {/* ── Title ── */}
+        {/* ── Title + Pity ── */}
         <motion.div
-          className="text-center pt-1"
+          className="text-center w-full max-w-[300px] mt-6"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
         >
           <h1
-            className="font-bold"
-            style={{ fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif", lineHeight: 1, fontSize: "clamp(1.8rem, 9vw, 3rem)" }}
+            className="font-bold mb-2"
+            style={{ fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif", lineHeight: 1.05, fontSize: "clamp(1.7rem, 8.5vw, 2.8rem)" }}
           >
-            <span className="title-love">Love Gacha For </span>
+            <span className="title-love">Love Gacha For</span>
             <br />
             <span className="title-name">คูมมอมอ</span>
           </h1>
-        </motion.div>
-
-        {/* ── Pity bar ── */}
-        <motion.div className="w-full max-w-xs" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
           <PityBar pityCount={state.pityCount} />
         </motion.div>
 
-        {/* ── Gacha machine ── */}
+        {/* ── Gacha machine — flex-1 ── */}
         <motion.div
+          className="flex-1 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 180, damping: 16 }}
@@ -87,37 +84,31 @@ export default function Home() {
           <GachaBall onOpen={handlePull} canPull={canPull} isAnimating={isAnimating} />
         </motion.div>
 
-        {/* ── Stats ── */}
+        {/* ── Stats + Nav ── */}
         <motion.div
-          className="flex gap-2 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="flex flex-col items-center gap-2.5 mb-5"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          {[
-            { label: "หมุน", value: state.totalPulls,                                color: "#2D1B5E" },
-            { label: "สะสม", value: `${state.collectedIds.length}/${totalItems}`,    color: "#2D1B5E" },
-            { label: "SSR",  value: ssrCount,                                         color: "#B8860B" },
-          ].map((s) => (
-            <div key={s.label} className="card-glass px-3 py-1 rounded-xl w-[68px] text-center">
-              <p className="text-base font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
-                {s.value}
-              </p>
-              <p className="text-xs" style={{ color: "#7B6A9E" }}>{s.label}</p>
-            </div>
-          ))}
-        </motion.div>
+          <div className="flex gap-2">
+            {[
+              { label: "หมุน", value: state.totalPulls,                             color: "#2D1B5E" },
+              { label: "สะสม", value: `${state.collectedIds.length}/${totalItems}`, color: "#2D1B5E" },
+              { label: "SSR",  value: ssrCount,                                      color: "#B8860B" },
+            ].map((s) => (
+              <div key={s.label} className="card-glass px-4 py-1.5 rounded-2xl text-center min-w-[64px]">
+                <p className="text-base font-bold leading-tight" style={{ color: s.color, fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif" }}>
+                  {s.value}
+                </p>
+                <p className="text-[11px]" style={{ color: "#7B6A9E" }}>{s.label}</p>
+              </div>
+            ))}
+          </div>
 
-        {/* ── Nav ── */}
-        <motion.nav
-          className="flex gap-3 pb-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-        >
           <Link
             href="/collection"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-full font-semibold text-sm transition-all hover:scale-105"
+            className="flex items-center gap-1.5 px-5 py-2 rounded-full font-semibold text-sm transition-all hover:scale-105"
             style={{
               fontFamily: "'IMTYC Birthday', 'Sarabun', sans-serif",
               background: "rgba(255,255,255,0.6)",
@@ -128,7 +119,7 @@ export default function Home() {
           >
             📚 สมุดสะสม
           </Link>
-        </motion.nav>
+        </motion.div>
 
       </div>
     </>

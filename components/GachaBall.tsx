@@ -13,16 +13,16 @@ const BALL_IMGS = [
 ];
 
 const DECORATIONS = [
-  { src: "/Im/sacdsacfasc.png",            x: -72, y: 15,  size: 28, delay: 0,    dur: 2.8 },
-  { src: "/Im/scascfsaf.png",              x: -60, y: 75,  size: 24, delay: 0.5,  dur: 3.1 },
-  { src: "/Im/sacdvewvre.png",             x: -68, y: 128, size: 22, delay: 1.1,  dur: 2.6 },
-  { src: "/Im/teddy-bear_4841256.png",     x: -50, y: 44,  size: 26, delay: 0.3,  dur: 3.4 },
-  { src: "/Im/wefwefewf.png",              x:  62, y: 15,  size: 26, delay: 0.7,  dur: 2.9 },
-  { src: "/Im/acadc7.png",                 x:  54, y: 75,  size: 22, delay: 0.2,  dur: 3.2 },
-  { src: "/Im/give-love_5680123.png",      x:  64, y: 128, size: 24, delay: 0.9,  dur: 2.7 },
-  { src: "/Im/love_2839131.png",           x:  48, y: 44,  size: 26, delay: 1.3,  dur: 3.0 },
-  { src: "/Im/teru-teru-bozu_7096623.png", x: -32, y: -16, size: 22, delay: 0.6,  dur: 3.5 },
-  { src: "/Im/pigeon_818600.png",          x:  28, y: -14, size: 22, delay: 0.4,  dur: 3.3 },
+  { src: "/Im/sacdsacfasc.png",            x: -95, y: 20,  size: 34, delay: 0,    dur: 2.8 },
+  { src: "/Im/scascfsaf.png",              x: -80, y: 90,  size: 28, delay: 0.5,  dur: 3.1 },
+  { src: "/Im/sacdvewvre.png",             x: -88, y: 155, size: 26, delay: 1.1,  dur: 2.6 },
+  { src: "/Im/teddy-bear_4841256.png",     x: -65, y: 54,  size: 32, delay: 0.3,  dur: 3.4 },
+  { src: "/Im/wefwefewf.png",              x:  82, y: 20,  size: 32, delay: 0.7,  dur: 2.9 },
+  { src: "/Im/acadc7.png",                 x:  70, y: 90,  size: 26, delay: 0.2,  dur: 3.2 },
+  { src: "/Im/give-love_5680123.png",      x:  84, y: 155, size: 28, delay: 0.9,  dur: 2.7 },
+  { src: "/Im/love_2839131.png",           x:  62, y: 54,  size: 30, delay: 1.3,  dur: 3.0 },
+  { src: "/Im/teru-teru-bozu_7096623.png", x: -42, y: -18, size: 26, delay: 0.6,  dur: 3.5 },
+  { src: "/Im/pigeon_818600.png",          x:  38, y: -16, size: 26, delay: 0.4,  dur: 3.3 },
 ];
 
 interface GachaBallProps {
@@ -98,8 +98,8 @@ export default function GachaBall({ onOpen, canPull, isAnimating }: GachaBallPro
                 <Image
                   src="/Im/299018-P85W5N-377.png"
                   alt="Gacha Machine"
-                  width={160}
-                  height={160}
+                  width={220}
+                  height={220}
                   className="object-contain"
                   style={{ filter: "drop-shadow(0 8px 24px rgba(100,140,220,0.35))" }}
                   priority
@@ -127,8 +127,8 @@ export default function GachaBall({ onOpen, canPull, isAnimating }: GachaBallPro
                 <Image
                   src="/Im/299018-P85W5N-377.png"
                   alt="Locked"
-                  width={160}
-                  height={160}
+                  width={220}
+                  height={220}
                   className="object-contain grayscale"
                 />
               </div>
